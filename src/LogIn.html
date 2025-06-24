@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - IMFDBS</title>
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-  <h1>login</h1>
   <nav>
-    <a href="register.html">register</a> |
+    <div class="dropdown">
+      <button class="dropbtn">Admin</button>
+      <div class="dropdown-content">
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="applicationlist.html">Applications</a>
+        <a href="admindashboard.html">Admin Dashboard</a>
+        <a href="register.html">Register</a>
+        <a href="LogIn.html">Login</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Scholar</button>
+      <div class="dropdown-content">
+        <a href="ScholarList.html">Scholar List</a>
+      </div>
+    </div>
   </nav>
-  <p>This is the login page.</p>
+  <h1>Login</h1>
+  <form action="#" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="register.html">Register here</a>.</p>
 </body>
 </html>
