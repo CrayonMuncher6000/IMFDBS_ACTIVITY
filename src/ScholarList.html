@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scholars - IMFDBS</title>
   <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="../Css/ScholarList.css">
 </head>
 <body>
   <nav>
@@ -27,10 +28,13 @@
   </nav>
   <h1>Scholar List</h1>
   <form id="scholarshipForm">
+    <label for="name">Name:</label>
     <input type="text" id="name" placeholder="Name" required>
+    <label for="program">Program:</label>
     <input type="text" id="program" placeholder="Program" required>
+    <label for="status">Status:</label>
     <input type="text" id="status" placeholder="Status" required>
-    <button type="submit">Add Scholarship</button>
+    <button type="submit">Add Scholar</button>
   </form>
   <table id="scholarshipTable" border="1" style="margin-top:20px;">
     <thead>
@@ -59,17 +63,17 @@
             <td>${s.program}</td>
             <td>${s.status}</td>
             <td>
-              <button onclick="deleteScholar('${s._id}')">Delete</button>
+              <button onclick="deleteScholar(${s.id})">Delete</button>
             </td>
           `;
           tbody.appendChild(tr);
         });
       } catch (e) {
-        tbody.innerHTML = '<tr><td colspan="4">Failed to load scholarships</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4">Failed to load scholars</td></tr>';
       }
     }
     async function deleteScholar(id) {
-      if (confirm('Delete this scholarship?')) {
+      if (confirm('Delete this scholar?')) {
         await deleteScholarship(id);
         loadScholarships();
       }
