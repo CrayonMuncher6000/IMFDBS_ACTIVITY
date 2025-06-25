@@ -1,5 +1,70 @@
 
 /* ...existing code... */
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #163919;
+  /* Remove background-color if you want only the image */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 10;
+  width: 100vw;
+  height: 100vh;
+  background: url('../pics/icct.jpg') no-repeat 20% center/cover;
+  opacity: 0.15; /* Adjust for desired faintness */
+  z-index: -1;
+  pointer-events: none;
+}
+form input,form button {
+  font-size: 1.2rem;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;      /* Make inputs and button fill the form width */
+  box-sizing: border-box;
+}
+
+form input {
+  margin-bottom: 8px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background-color: #388e3c;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space between boxes */
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+}
+.login {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 nav {
     display: flex;
     gap: 1rem;
@@ -38,3 +103,38 @@ nav {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.register-box {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  padding: 16px;
+  margin-top: 20px;
+  text-align: center;
+  color: black;
+  font-size: 1.03rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.register-box:hover {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+.form-box {
+  background: #f3cbc7;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
