@@ -36,3 +36,56 @@ nav {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+  
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #163919;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../pics/icct.jpg') no-repeat 20% center/cover;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dashboard-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 24px;
+  margin: 32px auto;
+  max-width: 900px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.admin-table th, .admin-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.admin-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.admin-table tr:hover {
+  background: #e8f5e9;
+}
