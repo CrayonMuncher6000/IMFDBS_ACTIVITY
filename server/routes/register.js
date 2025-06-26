@@ -10,6 +10,7 @@ function useSqlite() {
 
 // Register a new user
 router.post('/', async (req, res) => {
+  console.log('Register route hit. DB_TYPE:', process.env.DB_TYPE);
   const { username, email, password } = req.body;
   if (!username || !email || !password) {
     return res.status(400).json({ message: 'All fields are required.' });

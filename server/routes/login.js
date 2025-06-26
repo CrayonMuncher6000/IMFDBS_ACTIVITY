@@ -10,6 +10,7 @@ function useSqlite() {
 
 // Login route
 router.post('/', async (req, res) => {
+  console.log('Login route hit. DB_TYPE:', process.env.DB_TYPE);
   const { username, password } = req.body;
   if (!username || !password) {
     console.log('Login failed: missing username or password');
