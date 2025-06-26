@@ -10,7 +10,7 @@
   <div class="application-title-wrapper">
   <h1 class="application-title">Scholarship Application</h1>
 </div>
-  <form class="application-form" action="#" method="post" enctype="multipart/form-data">
+  <form class="application-form" id="applicationForm" action="#" method="post" enctype="multipart/form-data">
     <div class="form-box">
       <input type="text" name="fullname" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -20,5 +20,35 @@
       <button type="submit">Submit Application</button>
     </div>
   </form>
+  <script>
+    document.getElementById('applicationForm').onsubmit = async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      // Build the payload for the backend
+      const payload = {
+        name: formData.get('fullname'),
+        program: formData.get('program'),
+        status: 'Pending', // or another default status
+        email: formData.get('email') // if your backend expects email
+      };
+      try {
+        const response = await fetch('/api/scholarships', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+          window.location.href = 'Dashboard.html';
+        } else {
+          alert('Failed to submit application.');
+        }
+      } catch (err) {
+        alert('Error submitting application.');
+      }
+    };
+  </script>
 </body>
 </html>

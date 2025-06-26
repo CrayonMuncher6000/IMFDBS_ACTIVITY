@@ -98,3 +98,87 @@ h1 {
 #scholarshipTable button:hover {
   background: #b71c1c;
 }
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #163919;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../pics/icct.jpg') no-repeat 20% center/cover;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.form-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 24px;
+  max-width: 500px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form button {
+  font-size: 1.1rem;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form button:hover {
+  background-color: #388e3c;
+}
+
+#scholarshipTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+#scholarshipTable th, #scholarshipTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+#scholarshipTable th {
+  background: #4CAF50;
+  color: #fff;
+}
+
+#scholarshipTable tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+#scholarshipTable tr:hover {
+  background: #e8f5e9;
+}

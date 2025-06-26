@@ -27,28 +27,30 @@
     </div>
   </nav>
   <h1>Scholar List</h1>
-  <form id="scholarshipForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" placeholder="Name" required>
-    <label for="program">Program:</label>
-    <input type="text" id="program" placeholder="Program" required>
-    <label for="status">Status:</label>
-    <input type="text" id="status" placeholder="Status" required>
-    <button type="submit">Add Scholar</button>
-  </form>
-  <table id="scholarshipTable" border="1" style="margin-top:20px;">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Program</th>
-        <th>Status</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Scholarships will be loaded here -->
-    </tbody>
-  </table>
+  <div class="form-box">
+    <form id="scholarshipForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Name" required>
+      <label for="program">Program:</label>
+      <input type="text" id="program" placeholder="Program" required>
+      <label for="status">Status:</label>
+      <input type="text" id="status" placeholder="Status" required>
+      <button type="submit">Add Scholar</button>
+    </form>
+    <table id="scholarshipTable" border="1" style="margin-top:20px;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Program</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Scholarships will be loaded here -->
+      </tbody>
+    </table>
+  </div>
   <script src="scholarship.js"></script>
   <script>
     async function loadScholarships() {
