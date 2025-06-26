@@ -12,13 +12,13 @@ router.get('/', (req, res) => {
 
 // Add a new scholarship
 router.post('/', (req, res) => {
-  const { student_id, name, program, status } = req.body;
+  const { student_id, name, program, status, email } = req.body;
   db.run(
-    'INSERT INTO scholarships (student_id, name, program, status) VALUES (?, ?, ?, ?)',
-    [student_id, name, program, status],
+    'INSERT INTO scholarships (student_id, name, program, status, email) VALUES (?, ?, ?, ?, ?)',
+    [student_id, name, program, status, email],
     function (err) {
       if (err) return res.status(400).json({ message: err.message });
-      res.status(201).json({ id: this.lastID, student_id, name, program, status });
+      res.status(201).json({ id: this.lastID, student_id, name, program, status, email });
     }
   );
 });
