@@ -1,3 +1,21 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #163919;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../pics/icct.jpg') no-repeat 20% center/cover;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
 nav {
     display: flex;
     gap: 1rem;
@@ -36,3 +54,45 @@ nav {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+.profile-box {
+  background: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+  padding: 32px 24px;
+  max-width: 400px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+}
+
+.profile-info p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.edit-profile-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-profile-btn:hover {
+  background-color: #388e3c;
+}
