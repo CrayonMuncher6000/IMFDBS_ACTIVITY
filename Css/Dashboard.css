@@ -158,3 +158,17 @@ nav {
 #editProfileForm button:hover {
   background-color: #388e3c;
 }
+.apply-btn {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+.apply-btn:hover {
+  background-color: #1565c0;
+}

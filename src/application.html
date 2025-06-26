@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Application</title>
+  <link rel="stylesheet" href="../Css/application.css">
+</head>
+<body>
+  <div class="application-title-wrapper">
+  <h1 class="application-title">Scholarship Application</h1>
+</div>
+  <form class="application-form" action="#" method="post" enctype="multipart/form-data">
+    <div class="form-box">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="program" placeholder="Program" required>
+      <label for="documents">Upload Documents (PDF, DOCX, JPG, PNG):</label>
+      <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple required>
+      <button type="submit">Submit Application</button>
+    </div>
+  </form>
+</body>
+</html>
