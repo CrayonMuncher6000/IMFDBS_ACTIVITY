@@ -36,3 +36,27 @@ nav {
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .styled-table th, .styled-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    font-size: 1.08rem;
+  }
+  .styled-table th {
+    background: #4CAF50;
+    color: #fff;
+  }
+  .styled-table tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  .styled-table tr:hover {
+    background: #e8f5e9;
+  }
