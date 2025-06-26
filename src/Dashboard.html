@@ -50,7 +50,13 @@
     </form>
   </div>
 </div>
-<!-- ...existing HTML... -->
+
+<div class="application-status-box" style="background:#fff;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,0.12);padding:24px;margin:32px auto;max-width:400px;">
+  <h2>Your Application Status</h2>
+  <div id="applicationStatusContent">
+    <p>Loading your application...</p>
+  </div>
+</div>
 
 <!-- Place this just before </body> -->
 <script>
@@ -103,6 +109,32 @@
     // Close modal
     document.getElementById('editProfileModal').style.display = 'none';
   };
+
+  // Fetch and display the user's application status
+  window.addEventListener('DOMContentLoaded', async function() {
+    const savedProfile = JSON.parse(localStorage.getItem('profileData'));
+    if (savedProfile && savedProfile.email) {
+      try {
+        const res = await fetch('/api/scholarships');
+        const applications = await res.json();
+        // Find the latest application for this user by email
+        const userApp = applications.reverse().find(app => app.email === savedProfile.email);
+        const statusDiv = document.getElementById('applicationStatusContent');
+        if (userApp) {
+          statusDiv.innerHTML = `<strong>Name:</strong> ${userApp.name || ''}<br>
+            <strong>Email:</strong> ${userApp.email || ''}<br>
+            <strong>Program:</strong> ${userApp.program || ''}<br>
+            <strong>Status:</strong> <span style="color:${userApp.status === 'Approved' ? 'green' : userApp.status === 'Rejected' ? 'red' : '#1976d2'}">${userApp.status || 'Pending'}</span>`;
+        } else {
+          statusDiv.innerHTML = 'No application found.';
+        }
+      } catch (e) {
+        document.getElementById('applicationStatusContent').innerHTML = 'Failed to load application.';
+      }
+    } else {
+      document.getElementById('applicationStatusContent').innerHTML = 'No profile found.';
+    }
+  });
 </script>
 </body>
 </html>
