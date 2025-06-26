@@ -89,3 +89,24 @@ body::before {
 .admin-table tr:hover {
   background: #e8f5e9;
 }
+.admin-nav-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 24px 0 16px 0;
+}
+
+.admin-nav-buttons button {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.admin-nav-buttons button:hover {
+  background-color: #1565c0;
+}
