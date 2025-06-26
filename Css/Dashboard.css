@@ -96,3 +96,65 @@ nav {
 .edit-profile-btn:hover {
   background-color: #388e3c;
 }
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 8% auto;
+  padding: 32px 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.close {
+  color: #aaa;
+  align-self: flex-end;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.close:hover {
+  color: #333;
+}
+
+#editProfileForm input,
+#editProfileForm button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#editProfileForm button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+#editProfileForm button:hover {
+  background-color: #388e3c;
+}
