@@ -12,6 +12,7 @@
 </div>
   <form class="application-form" id="applicationForm" action="#" method="post" enctype="multipart/form-data">
     <div class="form-box">
+      <input type="text" name="student_id" placeholder="Student ID (e.g. CA202402519)" required>
       <input type="text" name="fullname" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="program" placeholder="Program" required>
@@ -27,6 +28,7 @@
       const formData = new FormData(form);
       // Build the payload for the backend
       const payload = {
+        student_id: formData.get('student_id'),
         name: formData.get('fullname'),
         program: formData.get('program'),
         status: 'Pending', // or another default status
